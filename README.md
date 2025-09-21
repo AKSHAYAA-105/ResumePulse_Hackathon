@@ -9,7 +9,7 @@
 ## Purpose: 
 Optimize resumes for ATS and recruiters instantly
 
-##Key Features:
+## Key Features:
 
 - Upload PDF resume (no login/signup)
 
