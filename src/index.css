@@ -8,7 +8,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* ResumePulse Design System - Light Mode */
+    --background: 248 250 252%; /* Light Gray (#F8FAFC) */
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -17,26 +18,42 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep Blue (#1E40AF) */
+    --primary: 225 83% 40%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 225 83% 35%;
 
+    /* Secondary: Light Gray variations */
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Emerald Green (#10B981) */
+    --accent: 162 73% 40%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 162 73% 35%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 225 83% 40%;
 
-    --radius: 0.5rem;
+    /* Success & Status Colors */
+    --success: 162 73% 40%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(225 83% 40%), hsl(225 83% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(162 73% 40%), hsl(162 73% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(248 250 252%), hsl(226 247 252%));
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,6 +73,7 @@ All colors MUST be HSL.
   }
 
   .dark {
+    /* ResumePulse Design System - Dark Mode */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -65,8 +83,9 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 225 83% 55%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --primary-hover: 225 83% 60%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -74,15 +93,25 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 162 73% 55%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --accent-hover: 162 73% 60%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 225 83% 55%;
+
+    --success: 162 73% 55%;
+    --success-foreground: 222.2 84% 4.9%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 222.2 84% 4.9%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(225 83% 55%), hsl(225 83% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(162 73% 55%), hsl(162 73% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222.2 84% 4.9%), hsl(220 84% 6%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +129,25 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  /* Custom gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
   }
 }
